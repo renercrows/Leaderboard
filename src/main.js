@@ -41,7 +41,7 @@ class BookForm {
       title[i].innerHTML = `${this.books[i].title}:`;
       button[i].setAttribute('onclick', `bookForm.removeBook(${i})`);
     }
-      document.querySelector('#empty-list').innerHTML = 'Recent scores';
+    document.querySelector('#empty-list').innerHTML = 'Recent scores';
   }
 
   addBook(title, author) {
