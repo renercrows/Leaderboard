@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Books</title>
+    <script defer src="../src/main.js"></script>
+    <script src="../js/luxon.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main id="list">
+        <h1 class="title2">Leaderboard</h1>
+        <h2 id="empty-list"></h2>
+        <p id="invitation" class="link"></p>
+        <button  id="remove-all" class="list-foot">Refresh</button>
+        <br>
+        <br>
+        <br>
+        <table id="table" class="border">
+            <tbody id="book-form"></tbody>
+        </table>
+    </main>
+    <form id="add-new">
+        <h2 class="h1">Add your score</h2>
+        <input id="title" type="text" placeholder="Your name">
+        <br>
+        <br>
+        <input id="author" type="number" placeholder="Your score">
+        <br>
+        <br>
+        <div>
+            <small id="message" class=""></small>
+            <button class="btn border-secondary border-2" id="button" type="button">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
