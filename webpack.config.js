@@ -14,17 +14,17 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-           'css-loader',
-           'sass-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
     ],
   },
   plugins: [
-      new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
-      contentBase: path.join(__dirname, 'public'),
-      port: 9000,
+    contentBase: path.join(__dirname, 'public'),
+    port: 9000,
   },
 };
