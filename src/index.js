@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
 import BookForm from '../modules/book.js';
-import './style.scss';
+import '../css/style.css';
 
 new BookForm();
