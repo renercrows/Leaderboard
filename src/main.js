@@ -1,4 +1,12 @@
 const errorMsg = document.querySelector('#message');
+const refreshBtn = document.getElementById('remove-all');
+
+window.onload = async () => {
+  const newScores = await (0,_get_board__WEBPACK_IMPORTED_MODULE_0__.default)();
+  (0,_gen_board__WEBPACK_IMPORTED_MODULE_1__.default)(leaderboard, newScores);
+};
+
+refreshBtn.addEventListener('click', () => document.location.reload());
 
 class BookForm {
   constructor() {
