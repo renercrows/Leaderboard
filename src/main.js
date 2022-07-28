@@ -1,4 +1,7 @@
 const errorMsg = document.querySelector('#message');
+const refreshBtn = document.getElementById('reload-page');
+
+refreshBtn.addEventListener('click', () => document.location.reload());
 
 class BookForm {
   constructor() {
@@ -28,26 +31,26 @@ class BookForm {
       `;
     for (let i = 0; i < this.books.length; i += 1) {
       document.getElementById('book-form').innerHTML += htmlString;
-      const title = document.querySelectorAll('.book-title');
-      const author = document.querySelectorAll('.book-author');
+      const name = document.querySelectorAll('.book-title');
+      const score = document.querySelectorAll('.book-author');
       const button = document.querySelectorAll('.book-btn');
-      if (this.books[i].author === '') {
-        author[i].innerHTML = 'Unknown';
+      if (this.books[i].score === '') {
+        score[i].innerHTML = 'Unknown';
         errorMsg.innerHTML = 'Score was set as "Unknown"';
       } else {
-        author[i].innerHTML = `${this.books[i].author}`;
+        score[i].innerHTML = `${this.books[i].score}`;
         errorMsg.innerHTML = '';
       }
-      title[i].innerHTML = `${this.books[i].title}:`;
+      name[i].innerHTML = `${this.books[i].name}:`;
       button[i].setAttribute('onclick', `bookForm.removeBook(${i})`);
     }
     document.querySelector('#empty-list').innerHTML = 'Recent scores';
   }
 
-  addBook(title, author) {
+  addBook(name, score) {
     const bookData = {
-      title,
-      author,
+      name,
+      score,
     };
     this.books.push(bookData);
     const bookList = JSON.stringify(this.books);
@@ -80,16 +83,16 @@ const bookForm = new BookForm();
 window.onload = bookForm.reload();
 
 const form = document.forms[0];
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
+const names = document.querySelector('#title');
+const score = document.querySelector('#author');
 const addBtn = document.querySelector('#button');
 addBtn.addEventListener('click', () => {
-  if (title.value === '') {
+  if (names.value === '') {
     errorMsg.style.color = '#f00';
     errorMsg.innerHTML = 'Name required';
     document.forms[0][0].style.borderColor = '#f00';
   } else {
-    bookForm.addBook(title.value, author.value);
+    bookForm.addBook(names.value, score.value);
     bookForm.reload();
     errorMsg.style.color = '#000';
     form[0].style.borderColor = '#000';
