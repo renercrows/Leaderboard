@@ -1,5 +1,4 @@
 const errorMsg = document.querySelector('#message');
-const leaderboard = document.getElementById('book-form');
 const refreshBtn = document.getElementById('reload-page');
 
 refreshBtn.addEventListener('click', () => document.location.reload());
@@ -84,16 +83,16 @@ const bookForm = new BookForm();
 window.onload = bookForm.reload();
 
 const form = document.forms[0];
-const name = document.querySelector('#title');
+const names = document.querySelector('#title');
 const score = document.querySelector('#author');
 const addBtn = document.querySelector('#button');
 addBtn.addEventListener('click', () => {
-  if (title.value === '') {
+  if (names.value === '') {
     errorMsg.style.color = '#f00';
     errorMsg.innerHTML = 'Name required';
     document.forms[0][0].style.borderColor = '#f00';
   } else {
-    bookForm.addBook(title.value, author.value);
+    bookForm.addBook(names.value, score.value);
     bookForm.reload();
     errorMsg.style.color = '#000';
     form[0].style.borderColor = '#000';
