@@ -1,9 +1,10 @@
 const errorMsg = document.querySelector('#message');
-const refreshBtn = document.getElementById('remove-all');
+const leaderboard = document.getElementById('book-form');
+const refreshBtn = document.getElementById('reload-page');
 
 window.onload = async () => {
-  const newScores = await (0,_get_board__WEBPACK_IMPORTED_MODULE_0__.default)();
-  (0,_gen_board__WEBPACK_IMPORTED_MODULE_1__.default)(leaderboard, newScores);
+  const newScores = await (0, _get_board__WEBPACK_IMPORTED_MODULE_0__.default)();
+  (0, _gen_board__WEBPACK_IMPORTED_MODULE_1__.default)(leaderboard, newScores);
 };
 
 refreshBtn.addEventListener('click', () => document.location.reload());
@@ -36,26 +37,26 @@ class BookForm {
       `;
     for (let i = 0; i < this.books.length; i += 1) {
       document.getElementById('book-form').innerHTML += htmlString;
-      const title = document.querySelectorAll('.book-title');
-      const author = document.querySelectorAll('.book-author');
+      const name = document.querySelectorAll('.book-title');
+      const score = document.querySelectorAll('.book-author');
       const button = document.querySelectorAll('.book-btn');
-      if (this.books[i].author === '') {
-        author[i].innerHTML = 'Unknown';
+      if (this.books[i].score === '') {
+        score[i].innerHTML = 'Unknown';
         errorMsg.innerHTML = 'Score was set as "Unknown"';
       } else {
-        author[i].innerHTML = `${this.books[i].author}`;
+        score[i].innerHTML = `${this.books[i].score}`;
         errorMsg.innerHTML = '';
       }
-      title[i].innerHTML = `${this.books[i].title}:`;
+      name[i].innerHTML = `${this.books[i].name}:`;
       button[i].setAttribute('onclick', `bookForm.removeBook(${i})`);
     }
     document.querySelector('#empty-list').innerHTML = 'Recent scores';
   }
 
-  addBook(title, author) {
+  addBook(name, score) {
     const bookData = {
-      title,
-      author,
+      name,
+      score,
     };
     this.books.push(bookData);
     const bookList = JSON.stringify(this.books);
@@ -88,8 +89,8 @@ const bookForm = new BookForm();
 window.onload = bookForm.reload();
 
 const form = document.forms[0];
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
+const name = document.querySelector('#title');
+const score = document.querySelector('#author');
 const addBtn = document.querySelector('#button');
 addBtn.addEventListener('click', () => {
   if (title.value === '') {
