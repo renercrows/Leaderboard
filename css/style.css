@@ -5,10 +5,15 @@ body {
 .title2 {
   color: white;
   font-family: sans-serif;
+  margin-left: -10%;
 }
 
 #table {
   width: 90%;
+  margin-top: 10%;
+  float: left;
+  width: 35%;
+  border: 2px solid rgba(89, 84, 84, 0.64);
 }
 
 #add-new-btn {
@@ -21,10 +26,6 @@ body {
   text-align: center;
   margin-top: 10%;
   margin-left: 10%;
-}
-
-.title2 {
-  margin-left: -10%;
 }
 
 #empty-list {
@@ -66,13 +67,6 @@ body {
   margin-top: 2%;
 }
 
-#table {
-  margin-top: 10%;
-  float: left;
-  width: 35%;
-  border: 2px solid rgba(89, 84, 84, 0.64);
-}
-
 #book-form {
   margin-top: 10%;
   width: 10%;
@@ -111,7 +105,6 @@ body {
 }
 
 #button {
-  padding: 0.5%;
   width: 10%;
   margin-left: 20.8%;
   padding: 1%;
