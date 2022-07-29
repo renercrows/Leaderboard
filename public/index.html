@@ -24,10 +24,10 @@
     </main>
     <form id="add-new">
         <h2 class="h1">Add your score</h2>
-        <input id="title" type="text" placeholder="Your name">
+        <input id="title" type="text" placeholder="Your name" maxlength="11">
         <br>
         <br>
-        <input id="author" type="number" placeholder="Your score">
+        <input type="number" id="author" placeholder="Your score" onInput="this.value = this.value.slice(0, 8)">
         <br>
         <br>
         <div>
