@@ -99,18 +99,3 @@ addBtn.addEventListener('click', () => {
     form.reset();
   }
 });
-
-// Navbar
-
-/* eslint-disable no-undef */
-const listLink = document.getElementById('list-btn');
-const addNewLink = document.getElementById('add-new-btn');
-const contactLink = document.getElementById('contact-btn');
-
-const list = document.getElementById('list');
-const addNew = document.getElementById('add-new');
-const contact = document.getElementById('contact');
-let visibility = 'list';
-if (localStorage.getItem('visibility')) {
-  visibility = localStorage.getItem('visibility');
-}
