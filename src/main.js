@@ -108,14 +108,6 @@ const addNewLink = document.getElementById('add-new-btn');
 const invitation = document.getElementById('invitation');
 const contactLink = document.getElementById('contact-btn');
 
-const setTimeDate = () => {
-  const { DateTime } = luxon;
-  const now = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
-  document.getElementById('date').innerHTML = now;
-};
-
-window.setInterval(setTimeDate, 1000);
-
 const list = document.getElementById('list');
 const addNew = document.getElementById('add-new');
 const contact = document.getElementById('contact');
@@ -162,25 +154,3 @@ const toggleContact = () => {
   listLink.style.color = 'black';
   addNewLink.style.color = 'black';
 };
-
-window.onload = () => {
-  setTimeDate();
-  switch (visibility) {
-    case 'list':
-      toggleList();
-      break;
-    case 'add-new':
-      toggleAddNew();
-      break;
-    case 'contact':
-      toggleContact();
-      break;
-    default:
-      toggleList();
-  }
-};
-
-listLink.onclick = () => { toggleList(); };
-addNewLink.onclick = () => { toggleAddNew(); };
-invitation.onclick = () => { toggleAddNew(); };
-contactLink.onclick = () => { toggleContact(); };
